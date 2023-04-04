@@ -1,0 +1,210 @@
+<html>
+<head>
+	<title>Payment</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</head>
+<style>
+	body{
+		background-color: #272c4a;
+		font-family: system-ui;
+	}
+	
+	nav {
+  width: 100%;
+  height: 10vh;
+  background-color: #272c4a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 10px 15px 0 rgba(2,3,4,.4);
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+.container{
+  max-width: 700px;
+  width: 100%;
+  background-color: white;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+.container .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+.container .title::before{
+  content: "";
+  position: absolute;
+  width: 30px;
+  border-radius: 5px;
+  
+}
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color: #9b59b6;
+}
+ 
+    
+ 
+ .button{
+   height: 45px;
+   margin: 35px 0;
+   width: 200px;
+   border-radius: 5px;  
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   background: linear-gradient(135deg, #71b7e6, #9b59b6);
+ }
+
+ .resetbtn
+  {
+   height: 45px;
+   margin: 35px 0;
+   width: 200px;
+   border-radius: 5px;  
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   background: linear-gradient(135deg, #71b7e6, #9b59b6);
+ }
+
+ 
+ @media(max-width: 584px){
+ .container{
+  max-width: 100%;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category{
+    width: 100%;
+  }
+  .content form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+  @media(max-width: 459px){
+  .container .content{
+    flex-direction: column;
+  }
+}
+.symblos{
+  align-content: center;
+}
+</style>
+<body>
+	<header>
+	<nav>
+	<div class="navbar-brand" href="#">
+		<span style="font-size:30px; color: white;">User Dashboard(Payment Section)</span>
+		</div>
+		<span class="nav justify-content-end">
+		<button onclick="Redirect();" style="font-size: 30px; color: white; background-color: #272c4a; border: none; padding-top: 15px;"><u>Back</u></button>
+ 
+    </span>
+	
+</nav>
+</header>
+<br>
+ <div class="container">
+  
+      <div class="container">
+    <div class="title">Payment Details</div>
+    <div class="content">
+      <form action="#">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Card Number</span>
+            <input type="text" placeholder="xxxx xxxx xxxx xxxx" required/>
+          </div>
+          <div class="input-box">
+            <span class="details">CVV</span>
+            <input type="text" placeholder="***" required/>
+          </div>
+          <div class="input-box">
+            <span class="details">Card Holder Name</span>
+           <input  type="text" placeholder="Enter your name"required />
+          </div>
+            <div class="input-box">
+            <span class="details">Expiry Date</span>
+           <input  type="date" required />
+          </div>
+         <div>
+        <button class="button"><b>Pay</b></button>
+      </div>
+
+         </div>
+         <div>
+          <center><b>We also Accept:</b></center><br>
+         </div>
+         <div class="symblos">
+          <center>
+          <a href="#">
+    <img src="" th:src="@{/images/paytm.png}" width="35" height="35" alt="">
+  </a>
+  &nbsp; &nbsp; &nbsp;
+  <a href="#">
+    <img src="" th:src="@{/images/googlepay.png}" width="35" height="35" alt="">
+  </a>
+  &nbsp; &nbsp; &nbsp;
+  <a href="#">
+    <img src="" th:src="@{/images/netbank.png}" width="22" height="22" alt="">
+  </a>
+</center>
+         </div>
+      </form>
+    </div>
+  </div>
+       </div>
+<script>
+  function Redirect()
+      {
+        window.location =  "/user/booking/home"
+      }
+  
+
+</script>
+
+</body>
+</html>

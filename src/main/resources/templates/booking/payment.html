@@ -1,0 +1,282 @@
+<!-- <!DOCTYPE html> -->
+<!-- <html lang="en" xmlns:th="http://www.thymeleaf.org" -->
+<!--       th:fragment="layout(content)"> -->
+<!-- <head> -->
+<!--     <meta charset="ISO-8859-1"> -->
+<!--     <title>PIMS </title> -->
+
+<!--     <link -->
+<!--             href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" -->
+<!--             rel="stylesheet" -->
+<!--             integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" -->
+<!--             crossorigin="anonymous"> -->
+<!--     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"> -->
+<!--     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script> -->
+
+
+<!-- </head> -->
+
+<!-- <style> -->
+
+<!-- </style> -->
+<!-- <body> -->
+<!--     <section> -->
+<!--         <div class="container-fluid"> -->
+<!--             <h1 class="mt-3">Payment Details</h1> -->
+<!--             <form action="/booking/paymentComplete" method="post"> -->
+<!--                 <div class="row mb-5 mt-5"> -->
+<!--                     <div class="col-6"> -->
+<!--                         <label class="col-3">Credit Card Number</label> -->
+<!--                         <input type="text" name="creditcardno" class="col-8"> -->
+<!--                     </div> -->
+<!--                     <div class="col-6"> -->
+<!--                         <label class="col-3">CVV Code</label> -->
+<!--                         <input type="number" name="cvvcode" class="col-8"> -->
+<!--                     </div> -->
+<!--                 </div> -->
+<!--                 <div class="row"> -->
+<!--                     <div class="col-6"> -->
+<!--                         <label class="col-3">Card Holder Name</label> -->
+<!--                         <input type="text" name="cardholdername" class="col-8"> -->
+<!--                     </div> -->
+<!--                     <div class="col-6"> -->
+<!--                         <label class="col-3">Expiry Date</label> -->
+<!--                         <input type="date" name="exirydate" class="col-8"> -->
+<!--                     </div> -->
+<!--                 </div> -->
+<!--                 <input type="submit" class="btn btn-primary col-1 mt-4" value="Pay"/> -->
+<!--             </form> -->
+<!--             <p class="mt-3 text-center">We also accept:</p> -->
+<!--             <div class="row" style="margin-left:13%;margin-top:4%"> -->
+<!--                 <div class="col-4"> -->
+<!--                     <button type="button" class="btn btn-primary col-6">Paytm</button> -->
+<!--                 </div> -->
+<!--                 <div class="col-4"> -->
+<!--                     <button type="button" class="btn btn-secondary col-6">Google Pay</button> -->
+<!--                 </div> -->
+<!--                 <div class="col-4"> -->
+<!--                     <button type="button" class="btn btn-warning col-6">Net Banking</button> -->
+<!--                 </div> -->
+<!--             </div> -->
+<!--         </div> -->
+<!--     </section> -->
+<!-- </body> -->
+<!-- </html> -->
+
+
+
+
+
+<html>
+<head>
+	<title>Booking Slot</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</head>
+<style>
+	body{
+		background-color: #272c4a;
+		font-family: system-ui;
+	}
+	
+	nav {
+  width: 100%;
+  height: 10vh;
+  background-color: #272c4a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 10px 15px 0 rgba(2,3,4,.4);
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+.container{
+  max-width: 700px;
+  width: 100%;
+  background-color: white;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+.container .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+.container .title::before{
+  content: "";
+  position: absolute;
+  width: 30px;
+  border-radius: 5px;
+  
+}
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color: #9b59b6;
+}
+ 
+    
+ 
+ .button{
+   height: 45px;
+   margin: 35px 0;
+   width: 200px;
+   border-radius: 5px;  
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   background: linear-gradient(135deg, #71b7e6, #9b59b6);
+ }
+
+ .resetbtn
+  {
+   height: 45px;
+   margin: 35px 0;
+   width: 200px;
+   border-radius: 5px;  
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   background: linear-gradient(135deg, #71b7e6, #9b59b6);
+ }
+
+ 
+ @media(max-width: 584px){
+ .container{
+  max-width: 100%;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category{
+    width: 100%;
+  }
+  .content form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+  @media(max-width: 459px){
+  .container .content{
+    flex-direction: column;
+  }
+}
+.symblos{
+  align-content: center;
+}
+</style>
+<body>
+	<header>
+	<nav>
+	<div class="navbar-brand" href="#">
+		&nbsp;&nbsp;<span style="font-size:30px; color: white;">User Dashboard(Payment Section)</span>
+		</div>
+		<span class="nav justify-content-end">
+		<button onclick="Redirect();" style="font-size: 30px; color: white; background-color: #272c4a; border: none; padding-top: 15px;"><u>Back</u>&nbsp;</button>
+ 
+    </span>
+	
+</nav>
+</header>
+<br>
+ <div class="container">
+  
+      <div class="container">
+    <div class="title">Payment Details</div>
+    <div class="content">
+     <form action="/booking/paymentComplete" method="post"> 
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Card Number</span>
+            <input type="number" placeholder="xxxx xxxx xxxx xxxx" name="creditcardno" required/>
+          </div>
+          <div class="input-box">
+            <span class="details">CVV</span>
+            <input  type="number" size="3"  placeholder="Enter cvv number" name="cvvcode" required/>
+          </div>
+          <div class="input-box">
+            <span class="details">Card Holder Name</span>
+           <input  type="text" placeholder="Enter your name" name="cardholdername" required />
+          </div>
+            <div class="input-box">
+            <span class="details">Expiry Date</span>
+           <input  type="date" name="exirydate" required />
+          </div>
+         <div>
+        <button class="button"><b>Pay</b></button>
+      </div>
+
+         </div>
+         <div>
+          <center><b>We also Accept:</b></center><br>
+         </div>
+         <div class="symblos">
+          <center>
+          <a href="https://paytm.com/login">
+    <img src="" th:src="@{/images/paytm.png}" width="35" height="35" alt="paytm">
+  </a>
+  &nbsp; &nbsp; &nbsp;
+  <a href="#">
+    <img src="" th:src="@{/images/googlepay.png}" width="35" height="35" alt="googlepay">
+  </a>
+  &nbsp; &nbsp; &nbsp;
+  <a href="#">
+    <img src="" th:src="@{/images/netbank.png}" width="22" height="22" alt="netbank">
+  </a>
+</center>
+         </div>
+      </form>
+    </div>
+  </div>
+       </div>
+<script>
+  function Redirect()
+      {
+        window.location = "../../user/bookingslot";
+      }
+  
+
+</script>
+
+</body>
+</html>
+
+
+
