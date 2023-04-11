@@ -17,7 +17,7 @@ Thymeleaf
 
 
 
-Project Description: Parking Management System
+Project Description: Parking Inventory Management System
 
 A Parking Management System is a software application that allows users to manage parking facilities efficiently. The system is designed 
 to help parking lot owners manage their parking spaces, monitor occupancy . The system also allows drivers to find available parking spaces, 
